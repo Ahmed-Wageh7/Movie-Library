@@ -1,9 +1,28 @@
 var defaultMovies = [
-  { name: "Inception", image: "/image_1.webp" },
-  { name: "The Dark Knight", image: "/image_2.webp" },
-  { name: "Fight Club", image: "/image_3.webp" },
-  { name: "Gladiator", image: "/image_4.webp" },
-  { name: "Avatar", image: "/image_5.webp" },
+  {
+    name: "Inception",
+    image: "image_1.webp",
+  },
+  {
+    name: "The Dark Knight",
+    image: "image_2.webp",
+  },
+  {
+    name: "Fight Club",
+    image: "image_3.webp",
+  },
+  {
+    name: "Gladiator",
+    image: "image_4.webp",
+  },
+  {
+    name: "Avatar",
+    image: "image_5.webp",
+  },
+  {
+    name: "Extra Image",
+    image: "image_6.jpeg",
+  },
 ];
 
 var movies = JSON.parse(localStorage.getItem("moviesList")) || defaultMovies;
