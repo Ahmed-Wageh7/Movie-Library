@@ -24,12 +24,16 @@ image: "images/image_1.webp",
 var movies = [];
 var storedMovies = localStorage.getItem("moviesList");
 
-var movies = JSON.parse(localStorage.getItem("moviesList")) || defaultMovies;
-if (!Array.isArray(movies) || movies.length === 0) {
+if (storedMovies === null) {
   movies = defaultMovies;
+  localStorage.setItem("moviesList", JSON.stringify(movies));
+} else {
+  movies = JSON.parse(storedMovies);
+  if (!Array.isArray(movies) || movies.length === 0) {
+    movies = defaultMovies;
+    localStorage.setItem("moviesList", JSON.stringify(movies));
+  }
 }
-localStorage.setItem("moviesList", JSON.stringify(movies));
-
 
 document.body.style.margin = "0";
 document.body.style.padding = "0";
