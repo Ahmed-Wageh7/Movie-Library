@@ -1,23 +1,23 @@
 var defaultMovies = [
   {
     name: "Inception",
-    image: "../images/image_1.webp",
+    image: "images/image_1.webp",
   },
   {
     name: "The Dark Knight",
-    image: "../images/image_2.webp",
+    image: "images/image_2.webp",
   },
   {
     name: "Fight Club",
-    image: "../images/image_3.webp",
+    image: "images/image_3.webp",
   },
   {
     name: "Gladiator",
-    image: "../images/image_4.webp",
+    image: "images/image_4.webp",
   },
   {
     name: "Avatar",
-    image: "../images/image_5.webp",
+    image: "images/image_5.webp",
   },
 ];
 
