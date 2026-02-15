@@ -1,4 +1,5 @@
 var defaultMovies = [
+<<<<<<< HEAD
   { name: "Inception", image: "../images/image_1.webp" },
   { name: "The Dark Knight", image: "../images/image_2.webp" },
   { name: "Fight Club", image: "../images/image_3.webp" },
@@ -9,6 +10,43 @@ var defaultMovies = [
 var movies = JSON.parse(localStorage.getItem("moviesList")) || defaultMovies;
 if (!Array.isArray(movies) || movies.length === 0) movies = defaultMovies;
 localStorage.setItem("moviesList", JSON.stringify(movies));
+=======
+  {
+    name: "Inception",
+image: "images/image_1.webp",
+  },
+  {
+    name: "The Dark Knight",
+    image: "images/image_2.webp",
+  },
+  {
+    name: "Fight Club",
+    image: "images/image_3.webp",
+  },
+  {
+    name: "Gladiator",
+    image: "images/image_4.webp",
+  },
+  {
+    name: "Avatar",
+    image: "images/image_5.webp",
+  },
+];
+
+var movies = [];
+var storedMovies = localStorage.getItem("moviesList");
+
+if (storedMovies === null) {
+  movies = defaultMovies;
+  localStorage.setItem("moviesList", JSON.stringify(movies));
+} else {
+  movies = JSON.parse(storedMovies);
+  if (!Array.isArray(movies) || movies.length === 0) {
+    movies = defaultMovies;
+    localStorage.setItem("moviesList", JSON.stringify(movies));
+  }
+}
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
 
 document.body.style.margin = "0";
 document.body.style.padding = "0";
@@ -60,11 +98,18 @@ formContainer.style.marginBottom = "3rem";
 formContainer.style.boxShadow = "0 25px 50px -12px rgba(0, 0, 0, 0.25)";
 container.appendChild(formContainer);
 
+<<<<<<< HEAD
 // === ريسبونسيف form ===
 var form = document.createElement("div");
 form.style.display = "grid";
 form.style.gridTemplateColumns = "repeat(auto-fit, minmax(200px, 1fr))";
 form.style.gap = "1rem";
+=======
+var form = document.createElement("div");
+form.style.display = "grid";
+form.style.gridTemplateColumns = "1fr 1fr auto";
+form.style.gap = "1.5rem";
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
 form.style.alignItems = "end";
 formContainer.appendChild(form);
 
@@ -77,7 +122,10 @@ nameInput.style.background = "rgba(255, 255, 255, 0.08)";
 nameInput.style.backdropFilter = "blur(10px)";
 nameInput.style.color = "#fff";
 nameInput.style.fontSize = "1.1rem";
+<<<<<<< HEAD
 nameInput.style.width = "100%";
+=======
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
 nameInput.style.transition = "all 0.3s ease";
 nameInput.style.outline = "none";
 nameInput.onfocus = () => {
@@ -99,7 +147,10 @@ imgInput.style.background = "rgba(255, 255, 255, 0.08)";
 imgInput.style.backdropFilter = "blur(10px)";
 imgInput.style.color = "#fff";
 imgInput.style.fontSize = "1.1rem";
+<<<<<<< HEAD
 imgInput.style.width = "100%";
+=======
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
 imgInput.style.transition = "all 0.3s ease";
 imgInput.style.outline = "none";
 imgInput.onfocus = () => {
@@ -122,9 +173,15 @@ addBtn.style.color = "#fff";
 addBtn.style.fontSize = "1.1rem";
 addBtn.style.fontWeight = "600";
 addBtn.style.cursor = "pointer";
+<<<<<<< HEAD
 addBtn.style.width = "100%";
 addBtn.style.transition = "all 0.3s ease";
 addBtn.style.boxShadow = "0 10px 25px rgba(102, 126, 234, 0.4)";
+=======
+addBtn.style.transition = "all 0.3s ease";
+addBtn.style.boxShadow = "0 10px 25px rgba(102, 126, 234, 0.4)";
+
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
 addBtn.onmouseover = () => {
   addBtn.style.transform = "translateY(-2px)";
   addBtn.style.boxShadow = "0 15px 35px rgba(102, 126, 234, 0.5)";
@@ -135,7 +192,10 @@ addBtn.onmouseout = () => {
 };
 form.appendChild(addBtn);
 
+<<<<<<< HEAD
 // === Grid Display ===
+=======
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
 var grid = document.createElement("div");
 grid.style.display = "grid";
 grid.style.gridTemplateColumns = "repeat(auto-fill, minmax(320px, 1fr))";
@@ -146,6 +206,7 @@ var updateIndex = null;
 
 function displayMovies() {
   grid.innerHTML = "";
+<<<<<<< HEAD
   movies.forEach((movie, i) => {
     var card = document.createElement("div");
     card.style.background =
@@ -157,6 +218,19 @@ function displayMovies() {
     card.style.position = "relative";
     card.style.boxShadow = "0 25px 50px -12px rgba(0,0,0,0.3)";
     card.style.transition = "all 0.4s cubic-bezier(0.4,0,0.2,1)";
+=======
+  for (var i = 0; i < movies.length; i++) {
+    var card = document.createElement("div");
+    card.style.background =
+      "linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9))";
+    card.style.backdropFilter = "blur(20px)";
+    card.style.border = "1px solid rgba(255, 255, 255, 0.1)";
+    card.style.borderRadius = "24px";
+    card.style.overflow = "hidden";
+    card.style.position = "relative";
+    card.style.boxShadow = "0 25px 50px -12px rgba(0, 0, 0, 0.3)";
+    card.style.transition = "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)";
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
 
     var imgContainer = document.createElement("div");
     imgContainer.style.position = "relative";
@@ -165,7 +239,11 @@ function displayMovies() {
     card.appendChild(imgContainer);
 
     var img = document.createElement("img");
+<<<<<<< HEAD
     img.src = movie.image;
+=======
+    img.src = movies[i].image;
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
     img.style.width = "100%";
     img.style.height = "100%";
     img.style.objectFit = "cover";
@@ -182,7 +260,11 @@ function displayMovies() {
     imgContainer.appendChild(overlay);
 
     var movieTitle = document.createElement("h3");
+<<<<<<< HEAD
     movieTitle.innerText = movie.name;
+=======
+    movieTitle.innerText = movies[i].name;
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
     movieTitle.style.position = "absolute";
     movieTitle.style.bottom = "1rem";
     movieTitle.style.left = "1.5rem";
@@ -207,12 +289,17 @@ function displayMovies() {
     deleteBtn.style.padding = "10px";
     deleteBtn.style.border = "none";
     deleteBtn.style.borderRadius = "12px";
+<<<<<<< HEAD
     deleteBtn.style.background = "rgba(239,68,68,0.9)";
+=======
+    deleteBtn.style.background = "rgba(239, 68, 68, 0.9)";
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
     deleteBtn.style.color = "#fff";
     deleteBtn.style.fontSize = "1.2rem";
     deleteBtn.style.cursor = "pointer";
     deleteBtn.style.transition = "all 0.3s ease";
     deleteBtn.style.backdropFilter = "blur(10px)";
+<<<<<<< HEAD
     deleteBtn.onclick = () => {
       Swal.fire({
         title: "Are you sure?",
@@ -239,11 +326,44 @@ function displayMovies() {
     editBtn.style.border = "none";
     editBtn.style.borderRadius = "12px";
     editBtn.style.background = "rgba(245,158,11,0.9)";
+=======
+
+    deleteBtn.onclick = (function (index) {
+      return function () {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#ef4444",
+          cancelButtonColor: "#6b7280",
+          confirmButtonText: "Yes, delete it!",
+          cancelButtonText: "Cancel",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            movies.splice(index, 1);
+            localStorage.setItem("moviesList", JSON.stringify(movies));
+            displayMovies();
+            Swal.fire("Deleted!", "Movie has been deleted.", "success");
+          }
+        });
+      };
+    })(i);
+    actions.appendChild(deleteBtn);
+
+    var editBtn = document.createElement("button");
+    editBtn.innerHTML = "update";
+
+    editBtn.style.border = "none";
+    editBtn.style.borderRadius = "12px";
+    editBtn.style.background = "rgba(245, 158, 11, 0.9)";
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
     editBtn.style.color = "#fff";
     editBtn.style.fontSize = "1.2rem";
     editBtn.style.cursor = "pointer";
     editBtn.style.transition = "all 0.3s ease";
     editBtn.style.backdropFilter = "blur(10px)";
+<<<<<<< HEAD
     editBtn.onclick = () => {
       nameInput.value = movie.name;
       imgInput.value = movie.image;
@@ -260,6 +380,27 @@ function displayMovies() {
 
 addBtn.onclick = function () {
   if (!nameInput.value.trim() || !imgInput.value.trim()) {
+=======
+
+    editBtn.onclick = (function (index) {
+      return function () {
+        nameInput.value = movies[index].name;
+        imgInput.value = movies[index].image;
+        updateIndex = index;
+        addBtn.innerText = "Update Movie";
+        addBtn.style.background =
+          "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)";
+      };
+    })(i);
+    actions.appendChild(editBtn);
+
+    grid.appendChild(card);
+  }
+}
+
+addBtn.onclick = function () {
+  if (nameInput.value.trim() === "" || imgInput.value.trim() === "") {
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
     Swal.fire({
       icon: "error",
       title: "Error!",
@@ -267,8 +408,17 @@ addBtn.onclick = function () {
     });
     return;
   }
+<<<<<<< HEAD
   if (updateIndex === null) {
     movies.push({ name: nameInput.value.trim(), image: imgInput.value.trim() });
+=======
+
+  if (updateIndex === null) {
+    movies.push({
+      name: nameInput.value.trim(),
+      image: imgInput.value.trim(),
+    });
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
     localStorage.setItem("moviesList", JSON.stringify(movies));
     displayMovies();
     nameInput.value = "";
@@ -290,19 +440,40 @@ addBtn.onclick = function () {
       confirmButtonText: "Yes, update it!",
       cancelButtonText: "Cancel",
     }).then((result) => {
+<<<<<<< HEAD
       if (!result.isConfirmed) return;
+=======
+      if (!result.isConfirmed) {
+        return;
+      }
+
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
       movies[updateIndex] = {
         name: nameInput.value.trim(),
         image: imgInput.value.trim(),
       };
+<<<<<<< HEAD
       localStorage.setItem("moviesList", JSON.stringify(movies));
       displayMovies();
+=======
+
+      localStorage.setItem("moviesList", JSON.stringify(movies));
+      displayMovies();
+
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
       updateIndex = null;
       addBtn.innerText = "Add Movie";
       addBtn.style.background =
         "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
+<<<<<<< HEAD
       nameInput.value = "";
       imgInput.value = "";
+=======
+
+      nameInput.value = "";
+      imgInput.value = "";
+
+>>>>>>> f04a4edb0d019c565238cc1b6927a1a8a86307d6
       Swal.fire({
         icon: "success",
         title: "Updated!",
