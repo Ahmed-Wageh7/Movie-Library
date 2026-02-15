@@ -24,16 +24,12 @@ var defaultMovies = [
 var movies = [];
 var storedMovies = localStorage.getItem("moviesList");
 
-if (storedMovies === null) {
+var movies = JSON.parse(localStorage.getItem("moviesList")) || defaultMovies;
+if (!Array.isArray(movies) || movies.length === 0) {
   movies = defaultMovies;
-  localStorage.setItem("moviesList", JSON.stringify(movies));
-} else {
-  movies = JSON.parse(storedMovies);
-  if (!Array.isArray(movies) || movies.length === 0) {
-    movies = defaultMovies;
-    localStorage.setItem("moviesList", JSON.stringify(movies));
-  }
 }
+localStorage.setItem("moviesList", JSON.stringify(movies));
+
 
 document.body.style.margin = "0";
 document.body.style.padding = "0";
