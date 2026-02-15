@@ -1,7 +1,7 @@
 var defaultMovies = [
   {
     name: "Inception",
- image: "https://username.github.io/Movie-Library/images/image_1.webp" 
+image: "images/image_1.webp",
   },
   {
     name: "The Dark Knight",
